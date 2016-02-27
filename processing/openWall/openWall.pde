@@ -81,10 +81,14 @@ int oldX;
 int frameX, frameY, frameW, frameH;
 float frameZoom;
 
+
+void settings(){
+  size(int(CANVASW/MONITORSCALE)+200+(border*2), int(CANVASH/MONITORSCALE)+(border*2)); //had to move this out of setup(), new function in processing3.0
+}
+
 /////////////////////////////////////////////////////////////////////////////////////////////////////SETUP
 
 void setup() {
-  size(int(CANVASW/MONITORSCALE)+200+(border*2), int(CANVASH/MONITORSCALE)+(border*2));
   background(200);
   stroke(255);
 
@@ -92,7 +96,7 @@ void setup() {
   linee =new ArrayList <Linea>();
 
 
-  println(Serial.list());
+  printArray(Serial.list());
 
   // on my macbook is the 4
   try
@@ -202,4 +206,3 @@ void draw()
     }
   }
 }
-
